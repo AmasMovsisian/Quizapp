@@ -1,9 +1,9 @@
-body{
+body {
     min-height: 100vh;
     background-color: slategrey !important;
 }
 
-.container{
+.container {
     min-height: 100vh;
     display: flex;
     flex-direction: row;
@@ -12,11 +12,11 @@ body{
     background-color: slategrey;
 }
 
-.quiz-card{
+.quiz-card {
     width: 45rem;
 }
 
-.question_footer{
+.question_footer {
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     padding-top: 12px;
     display: flex;
@@ -24,50 +24,97 @@ body{
     align-items: center;
 }
 
-.quiz-answer-card:hover{
+.quiz-answer-card:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
 }
 
 .bg-success {
-  background-color: rgb(115, 155, 115) !important;
-  color: white !important;
+    background-color: rgb(115, 155, 115) !important;
+    color: white !important;
 }
 
 .bg-danger {
-  background-color: rgb(155, 115, 115) !important;
-  color: white !important;
+    background-color: rgb(155, 115, 115) !important;
+    color: white !important;
 }
 
-.endText{
+.endText {
     text-align: center;
 }
 
-.progress{
+.progress {
     display: flex;
     justify-content: center;
     align-items: center;
     align-items: center;
-    padding: 15px;
+    padding: 16px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 0;
     background-color: rgb(216, 236, 255);
 }
 
-.navbar, .container-fluid, .navbar, .bg-body-tertiary {
+.navbar,
+.container-fluid,
+.navbar,
+.bg-body-tertiary {
     background-color: rgb(152, 191, 205);
     padding: 0;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
-    
+
 }
 
-.logo, .navbar-brand{
+.logo,
+.navbar-brand {
     padding-left: 32px;
     padding-top: 16px;
     padding-bottom: 16px;
 }
 
-.card{
+.card {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 996px) {
+    .quiz-card {
+        width: 100%;
+    }
+}
+
+@media (max-width:580px) {
+
+    * {
+        text-align: center;
+    }
+
+    .navbar .container-fluid {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        padding-left: 0px;
+        margin: 0;
+    }
+
+    .logo {
+        padding-left: 0px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .container {
+        min-height: 70vh;
+    }
+
+    p,
+    span,
+    b {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
 }
