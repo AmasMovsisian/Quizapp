@@ -58,6 +58,8 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let el = document.getElementById(selection).parentNode;
+el.classList.remove('bg-success', 'bg-danger');
 
 
 function init(){
@@ -68,12 +70,27 @@ function init(){
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion >= questions.length) {
+        document.getElementById("questionText").innerHTML = "Herzlichen Glückwunsch! Du hast alle Fragen beantwortet!";
+        resetAnswerButtons();
         document.getElementById("nextQuestion").innerHTML = "Neu starten";
         document.getElementById("nextQuestion").onclick = restartQuiz;
         return;
     }
-    showQuestion();
+    document.getElementById("nextQuestion").disabled = true;
     document.getElementById("currentQuestionNumber").innerHTML = currentQuestion + 1;
+    resetAnswerButtons();
+    showQuestion();
+}
+
+function resetAnswerButtons() {
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
 }
 
 function restartQuiz() {
@@ -100,11 +117,10 @@ function answer(selection) {
     let questionCurrentNumber = selection.slice(-1);
 
     if(questionCurrentNumber == question['right_answer']) {
-       console.log("Richtig");
-       
+       document.getElementById(selection).parentNode.classList.add('bg-success');
+       document.getElementById("nextQuestion").disabled = false;
     } else {
-       console.log("Falsch");
+       document.getElementById(selection).parentNode.classList.add('bg-danger');
     }
     
 }
-
