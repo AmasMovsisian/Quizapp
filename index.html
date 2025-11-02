@@ -27,10 +27,25 @@
     </nav>
 
 
+
     <div class="container">
         <div class="card" style="width: 45rem">
-            <img src="./img/Quiz_img.jpg" class="card-img-top" />
-            <div class="card-body quiz-card">
+            <img src="./img/Quiz_img.jpg" class="card-img-top" id="cardImg" />
+
+            <div class="card-body" id="endScreen" style="display: none;">
+
+                <div>
+                    <b>Das Quiz ist beendet!</b>
+                    <span>
+                        <b id="rightAnswerAmount">xx</b> von <b id="amountOfQuestions">xx</b> Fragen hast du gleich beim
+                        ersten Versuch richtig beantwortet! Nur <b id="falseAnswer">xx</b> Antworten waren nicht ganz
+                        richtig.
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="card-body quiz-card" id="questionBody">
                 <h5 class="card-title" id="questionText">Fragen</h5>
 
 

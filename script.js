@@ -58,8 +58,8 @@ let questions = [
 ];
 
 let currentQuestion = 0;
-let el = document.getElementById(selection).parentNode;
-el.classList.remove('bg-success', 'bg-danger');
+let rightAnswers = 0;
+let falseAnswers = 0;
 
 
 function init(){
@@ -70,8 +70,13 @@ function init(){
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion >= questions.length) {
-        document.getElementById("questionText").innerHTML = "Herzlichen Glückwunsch! Du hast alle Fragen beantwortet!";
         resetAnswerButtons();
+        document.getElementById("amountOfQuestions").innerHTML = questions.length;
+        document.getElementById("rightAnswerAmount").innerHTML = rightAnswers;
+        document.getElementById("falseAnswer").innerHTML = falseAnswers;
+        document.getElementById("cardImg").src = "./img/passedImg.jpg";
+        document.getElementById("endScreen").style = "";
+        document.getElementById("questionBody").style.display = "none";
         document.getElementById("nextQuestion").innerHTML = "Neu starten";
         document.getElementById("nextQuestion").onclick = restartQuiz;
         return;
@@ -118,9 +123,12 @@ function answer(selection) {
 
     if(questionCurrentNumber == question['right_answer']) {
        document.getElementById(selection).parentNode.classList.add('bg-success');
+       rightAnswers++;
        document.getElementById("nextQuestion").disabled = false;
     } else {
        document.getElementById(selection).parentNode.classList.add('bg-danger');
+       falseAnswers++;
+       rightAnswers--;
     }
     
 }
