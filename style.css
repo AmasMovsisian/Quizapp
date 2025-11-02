@@ -23,3 +23,8 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
+.quiz-answer-card:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
