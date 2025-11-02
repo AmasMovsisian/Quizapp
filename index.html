@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
@@ -13,41 +12,36 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
+    <link rel="icon" type="image/x-icon" href="./Quizapp design/brain result.png">
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
-
+    <script src="./templates.js" defer></script>
 </head>
 
 <body onload="init()">
-
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Quiz App</a>
+            <a class="navbar-brand"  href="./index.html"><img src="./Quizapp design/logo.png" alt="Logo" id="logo"></a>
         </div>
     </nav>
-
-
 
     <div class="container">
         <div class="card" style="width: 45rem">
             <img src="./img/Quiz_img.jpg" class="card-img-top" id="cardImg" />
 
-            <div class="card-body" id="endScreen" style="display: none;">
+            <div class="progress" id="progressBar" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 25%">0%</div>
+            </div>
 
-                <div>
-                    <b>Das Quiz ist beendet!</b>
-                    <span>
-                        <b id="rightAnswerAmount">xx</b> von <b id="amountOfQuestions">xx</b> Fragen hast du gleich beim
-                        ersten Versuch richtig beantwortet! Nur <b id="falseAnswer">xx</b> Antworten waren nicht ganz
-                        richtig.
-                    </span>
+            <div class="card-body" id="endScreen" style="display: none">
+                <div class="endText" id="endTextResult">
+                 
                 </div>
-
             </div>
 
             <div class="card-body quiz-card" id="questionBody">
                 <h5 class="card-title" id="questionText">Fragen</h5>
-
 
                 <div class="card mb-2">
                     <div class="card-body quiz-answer-card" id="answer_1" onclick="answer('answer_1')">
@@ -78,17 +72,13 @@
                         <b id="currentQuestionNumber">1</b> von <b id="allQuestions">5</b>
                     </span>
 
-                    <button class="btn btn-secondary" id="nextQuestion" disabled onclick="nextQuestion()">Nächste
-                        Frage</button>
+                    <button class="btn btn-secondary" id="nextQuestion" disabled onclick="nextQuestion()">
+                        Nächste Frage
+                    </button>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 </html>
